@@ -1,0 +1,55 @@
+Formázott kiíratás:
+    System.out.printf("%2d:%2d:%2d", ora,perc,masodperc);
+    %-kezdés,2-két helyíértéken,d-egész szám(f- floating number)
+
+Óra függvény:
+    this.masodperc += mp;
+    this.perc += this.masodperc / 60;
+    this.masodperc %= 60;
+    this.ora += this.perc / 60;
+    this.perc %= 60;
+    this.ora %= 24;
+
+Megfordít egyszerûen:
+    String rev = new StringBuilder(source).reverse().toString();
+
+Boolean igaz/hamis String függvényben:
+    return ~ + (this.isBoolean() ? "" : "nem")+ ~
+    ? = ha igaz + m?velet
+    : = ha nem igaz + m?velet
+    
+Véletlen szám 1 -> 10:
+    int random=(int)(Math.random()*10+1);
+    
+50% generator:
+    public void kocsitHuz() {
+        int random = (int) (Math.random() * 10 + 1);
+        if (!this.makacs) {
+            System.out.println("Kocsit húz.");
+        } else {
+            if (random % 2 == 0) {
+                System.out.println("Megmakacsolta magát.");
+            } else {
+                System.out.println("Kocsit húz.");
+            }
+        }
+    }
+
+Csak számokat tartalmazó String:
+if (string.matches("^.*[^a-zA-Z ].*$"))
+
+Másodperc alapu számlázás:
+
+    if(masodperc>=0){
+            perc++;
+        }
+        int percek[] = new int[perc];
+        percek[0] = masodperc * perc;
+        for (int i = 1; i < percek.length; i++) {
+            percek[i] = i * 60;
+        }
+        int osszeg = 0;
+        for (int i = 0; i < percek.length; i++) {
+            osszeg += percek[i];
+        }
+        return osszeg;
